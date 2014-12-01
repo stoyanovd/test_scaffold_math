@@ -1,0 +1,2 @@
+module ResultColorsHelper
+end

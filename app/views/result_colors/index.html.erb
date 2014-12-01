@@ -1,0 +1,31 @@
+<h1>Listing result_colors</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Word</th>
+        <th>Red</th>
+        <th>Green</th>
+        <th>Blue</th>
+        <th colspan="3"></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @result_colors.each do |result_color| %>
+        <tr>
+            <td><%= result_color.word %></td>
+            <td><%= result_color.red %></td>
+            <td><%= result_color.green %></td>
+            <td><%= result_color.blue %></td>
+            <td><%= link_to 'Show', result_color %></td>
+            <td><%= link_to 'Edit', edit_result_color_path(result_color) %></td>
+            <td><%= link_to 'Destroy', result_color, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Result color', new_result_color_path %>

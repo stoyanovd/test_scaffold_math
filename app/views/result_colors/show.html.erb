@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Word:</strong>
+    <%= @result_color.word %>
+</p>
+
+<p>
+    <strong>Red:</strong>
+    <%= @result_color.red %>
+</p>
+<p>
+    <strong>Green:</strong>
+    <%= @result_color.green %>
+</p>
+<p>
+    <strong>Blue:</strong>
+    <%= @result_color.blue %>
+</p>
+
+<div class="result_color_preview" style="background-color: <%= "#%02x%02x%02x" % [@result_color.red, @result_color.green, @result_color.blue] %>">
+    &nbsp;
+</div>
+
+<%= link_to 'Edit', edit_result_color_path(@result_color) %> |
+<%= link_to 'Back', result_colors_path %>

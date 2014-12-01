@@ -18,8 +18,10 @@
                 <% problem_list.problems.each do |problem| %>
                     <td>
                         <% cur = problem.results.select { |result| result.student_id == student.id } %>
-                        <% unless cur.empty? %>
-                            <%= cur.first.status %>
+                        <% if cur.count > 0 %>
+                            <%= link_to cur.first.status, result_path(cur.first), style: "display: block" %>
+                        <% else %>
+                            <%= link_to "&nbsp;".html_safe, new_result_path(problem_id: problem.id, student_id: student.id), style: "display: block" %>
                         <% end %>
                     </td>
                 <% end %>

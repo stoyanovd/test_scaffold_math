@@ -18,6 +18,9 @@ class ResultsController < ApplicationController
     if params.has_key?(:problem_id)
       @result.problem_id = params[:problem_id]
     end
+    if params.has_key?(:student_id)
+      @result.student_id = params[:student_id]
+    end
   end
 
   # GET /results/1/edit

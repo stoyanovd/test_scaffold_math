@@ -1,0 +1,34 @@
+<h1>Listing problem_lists</h1>
+
+<table>
+    <% @problem_lists.each do |problem_list| %>
+        <tr>
+            <td colspan="7" align="center"><%= link_to problem_list.title, problem_list %></td>
+        </tr>
+        <tr class="blank_tr"></tr>
+        <tr>
+            <td></td>
+            <% problem_list.problems.each do |problem| %>
+                <td> <%= link_to problem.number, problem_path(problem) %> </td>
+            <% end %>
+        </tr>
+        <% Student.all.each do |student| %>
+            <tr>
+                <td><%= link_to student.name, student_path(student) %></td>
+                <% problem_list.problems.each do |problem| %>
+                    <td>
+                        <% cur = problem.results.select { |result| result.student_id == student.id } %>
+                        <% unless cur.empty? %>
+                            <%= cur.first.status %>
+                        <% end %>
+                    </td>
+                <% end %>
+            </tr>
+        <% end %>
+        <tr class="blank_tr"></tr>
+    <% end %>
+
+</table>
+<br>
+
+<%= link_to 'New Problem list', new_problem_list_path %>

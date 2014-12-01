@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Number:</strong>
+    <%= @problem.number %>
+</p>
+
+<p>
+    <strong>Body:</strong>
+    <%= @problem.body %>
+</p>
+
+<p>
+    <strong>id:</strong>
+    <%= @problem.id %>
+</p>
+
+<p>
+    <strong>Problem list:</strong>
+    <%= @problem.problem_list_id %>
+    <strong> &nbsp;&nbsp;&nbsp;(
+        <%= @problem.problem_list.title %>  )
+    </strong>
+</p>
+
+<%= link_to 'New Result', new_result_path(problem_id: @problem.id) %>
+<br>
+<br>
+<%= link_to 'Edit', edit_problem_path(@problem) %> |
+<%= link_to 'Back', problems_path %>

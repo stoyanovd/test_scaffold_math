@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @problem_list.title %>
+    <strong>Title:</strong>
+    <%= @problem_list.title %>
 </p>
 
 <p>
@@ -17,7 +17,7 @@
 
 <p>
     <% @problem_list.problems.each do |problem| %>
-    <%= link_to problem.number, problem_path(problem) %>
+        <%= link_to problem.number, problem_path(problem) %>
     <% end %>
 </p>
 <%= link_to 'New Problem', new_problem_path(problem_list_id: @problem_list.id) %>

@@ -3,15 +3,20 @@ class Result < ActiveRecord::Base
             length: {minimum: 1}
 
 
-
   belongs_to :student
 
   belongs_to :problem
 
-
-
-
   validate :must_exists
+
+  def get_color
+    search = ResultColor.where(["word = ?", self.status]).first
+    if search != nil
+      search
+    else
+      ResultColor.new
+    end
+  end
 
   private
   def must_exists

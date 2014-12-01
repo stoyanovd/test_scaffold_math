@@ -10,10 +10,10 @@
 <header>
     <div class="container">
         <div class="left">
-            abc
         </div>
         <div class="right">
-            xsa
+            <%= link_to 'Students', students_path %>
+            <%= link_to 'Colors', result_colors_path %>
         </div>
     </div>
 </header>
@@ -23,15 +23,13 @@
 <body>
 
 <%= yield %>
-<br>
-<br>
-<br>
-
-<%= link_to 'Problem Lists', problem_lists_path %>
-
 
 </body>
+
 <footer>
+    <div align="center">
+        <%= link_to 'Problem Lists', problem_lists_path, class: "centered_text bold_text" %>
+    </div>
     \[\int_a^b f(x) dx=F(b)-F(a)\]
 </footer>
 </html>

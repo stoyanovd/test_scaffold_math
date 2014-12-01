@@ -62,16 +62,15 @@ class ProblemListsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_problem_list
-      @problem_list = ProblemList.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_problem_list
+    @problem_list = ProblemList.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def problem_list_params
-      params.require(:problem_list).permit(:title, :description)
-    end
-
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def problem_list_params
+    params.require(:problem_list).permit(:title, :description)
+  end
 
 
   # layout :resolve_layout

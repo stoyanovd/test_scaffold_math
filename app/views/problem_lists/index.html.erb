@@ -1,36 +1,46 @@
-<h1>Listing problem_lists</h1>
+<h1>Problem Lists</h1>
 
-<table>
-    <% @problem_lists.each do |problem_list| %>
+<% @problem_lists.each do |problem_list| %>
+    <table>
         <tr>
-            <td colspan="7" align="center"><%= link_to problem_list.title, problem_list %></td>
+            <td colspan="7" align="center" class="problem_list_name">
+                <%= link_to problem_list.title, problem_list, class: "td_link" %>
+            </td>
         </tr>
         <tr class="blank_tr"></tr>
         <tr>
             <td></td>
             <% problem_list.problems.each do |problem| %>
-                <td> <%= link_to problem.number, problem_path(problem) %> </td>
+                <td class="problem_number">
+                    <%= link_to problem.number, problem_path(problem), class: "td_link" %>
+                </td>
             <% end %>
         </tr>
         <% Student.all.each do |student| %>
             <tr>
-                <td><%= link_to student.name, student_path(student) %></td>
+                <td class="student_name">
+                    <%= link_to student.name, student_path(student), class: "td_link" %>
+                </td>
                 <% problem_list.problems.each do |problem| %>
-                    <td>
-                        <% cur = problem.results.select { |result| result.student_id == student.id } %>
-                        <% if cur.count > 0 %>
-                            <%= link_to cur.first.status, result_path(cur.first), style: "display: block" %>
-                        <% else %>
-                            <%= link_to "&nbsp;".html_safe, new_result_path(problem_id: problem.id, student_id: student.id), style: "display: block" %>
-                        <% end %>
-                    </td>
+                    <% cur = problem.results.select { |result| result.student_id == student.id } %>
+                    <% if cur.count > 0 %>
+                        <% result = cur.first %>
+                        <% td_color = result.get_color %>
+                        <td class="result_status" style="background-color: <%= "#%02x%02x%02x" % [td_color.red, td_color.green, td_color.blue] %>">
+                            <%= link_to result.status, result_path(result), class: "td_link" %>
+                        </td>
+                    <% else %>
+                        <td class="result_status" style="background-color: grey">
+                            <%= link_to "&nbsp;".html_safe, new_result_path(problem_id: problem.id, student_id: student.id), class: "td_link" %>
+                        </td>
+                    <% end %>
                 <% end %>
             </tr>
         <% end %>
         <tr class="blank_tr"></tr>
-    <% end %>
 
-</table>
-<br>
+    </table>
+    <br>
+<% end %>
 
 <%= link_to 'New Problem list', new_problem_list_path %>

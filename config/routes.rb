@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'problem_lists#index'
+
   resources :results
 
   resources :problems

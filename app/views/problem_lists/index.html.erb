@@ -1,7 +1,15 @@
-<h1>Problem Lists</h1>
-
+<% index_i = 0 %>
 <% @problem_lists.each do |problem_list| %>
-    <table>
+    <% case (index_i % 3) %>
+<% when 0 %>
+        <% this_table_align = "left_problem_list_align" %>
+    <% when 1 %>
+        <% this_table_align = "middle_problem_list_align" %>
+    <% else %>
+        <% this_table_align = "right_problem_list_align" %>
+    <% end %>
+
+    <table class="table_problem_list_short_view <%= this_table_align %>" style="top: <%= (index_i / 3) * 230 %>px">
         <tr>
             <td colspan="7" align="center" class="problem_list_name">
                 <%= link_to problem_list.title, problem_list, class: "td_link" %>
@@ -40,7 +48,15 @@
         <tr class="blank_tr"></tr>
 
     </table>
-    <br>
+    <% index_i += 1 %>
 <% end %>
 
-<%= link_to 'New Problem list', new_problem_list_path %>
+<% if (index_i % 3) == 0 %>
+    <div class="empty_box"></div>
+<% end %>
+
+<a href="<%= new_problem_list_path %>" class="add_button_cross">
+
+    <div class="add_button_cross_help1"></div>
+    <div class="add_button_cross_help2"></div>
+</a>

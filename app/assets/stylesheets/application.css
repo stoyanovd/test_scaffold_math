@@ -14,8 +14,13 @@
  *= require_self
  */
 
+html, body {
+    height: 100%;
+}
+
 table, th, td {
     border: 4px ridge seagreen;
+    table-layout: auto;
 }
 
 tr, td {
@@ -27,27 +32,61 @@ tr, td {
     height: 15px;
 }
 
-.left {
-    float: left;
+.main_header {
+    height: 20px;
+    border-bottom: groove 7px;
 }
 
-.right {
-    float: right;
+.main_footer {
+    height: 60px;
 }
 
-.centered_text {
-    position: relative;
-    text-align: center;
-}
-
-.bold_text {
-    font-weight: 600;
+.main_body {
+    column-width: 270px;
+    min-height: 100%;
+    display: table;
 }
 
 .container {
-    width: 980px;
+    width: 800px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    padding: 20px;
+    background-color: #F7F7F7;
+    position: relative;
+}
+
+.main_title {
+    float: left;
+    margin: 0;
+    font-family: "Lucida Grande", Iverdana, arial, helvetica, sans-serif;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.main_nav_atop_panel {
+    font-family: "Lucida Grande", Iverdana, arial, helvetica, sans-serif;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.main_background {
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #555555;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.table_problem_list_short_view {
+    margin: 20px;
+    position: absolute;
+    display: table-cell;
 }
 
 td {
@@ -59,7 +98,7 @@ td {
 ​
 /* unvisited link */
 
-   a:link {
+     a:link {
     color: #000000;
 }
 
@@ -73,7 +112,7 @@ a:hover {
     background-color: #555555;
     opacity: 0.7;
     border-radius: 5px;
-    border: 1px groove #000000;
+    border: 0px groove #000000;
 }
 
 /* selected link */
@@ -105,4 +144,51 @@ a:active {
 
 .problem_list_name {
     background-color: #8866DD;
+}
+
+.left_problem_list_align {
+    left: 0;
+}
+
+.middle_problem_list_align {
+    left: 33%;
+}
+
+.right_problem_list_align {
+    left: 67%;
+}
+
+.add_button_cross {
+    position: absolute;
+    bottom: 100px;
+    width: 100px;
+    height: 100px;
+    right: 30px;
+    background-color: #8899DD;
+    border-radius: 45px;
+}
+
+.add_button_cross_help1 {
+    position: absolute;
+    left: 38%;
+    width: 24%;
+    height: 74%;
+    top: 13%;
+    background-color: lawngreen;
+    border-radius: 15px;
+}
+
+.add_button_cross_help2 {
+    position: absolute;
+    left: 13%;
+    width: 74%;
+    height: 24%;
+    top: 38%;
+    border-radius: 15px;
+    background-color: lawngreen;
+}
+
+.empty_box {
+    position: absolute;
+    height: 130px;
 }

@@ -32,20 +32,6 @@ tr, td {
     height: 15px;
 }
 
-.main_header {
-    height: 20px;
-    border-bottom: groove 7px;
-}
-
-.main_footer {
-    height: 60px;
-}
-
-.main_body {
-    column-width: 270px;
-    min-height: 100%;
-    display: table;
-}
 
 .container {
     width: 800px;
@@ -56,22 +42,6 @@ tr, td {
     position: relative;
 }
 
-.main_title {
-    float: left;
-    margin: 0;
-    font-family: "Lucida Grande", Iverdana, arial, helvetica, sans-serif;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-}
-
-.main_nav_atop_panel {
-    font-family: "Lucida Grande", Iverdana, arial, helvetica, sans-serif;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translate(0, -50%);
-}
 
 .main_background {
     position: relative;
@@ -87,6 +57,7 @@ tr, td {
     margin: 20px;
     position: absolute;
     display: table-cell;
+    box-shadow: 2px 2px 12px 7px darkslategrey;
 }
 
 td {
@@ -156,39 +127,4 @@ a:active {
 
 .right_problem_list_align {
     left: 67%;
-}
-
-.add_button_cross {
-    position: absolute;
-    bottom: 100px;
-    width: 100px;
-    height: 100px;
-    right: 30px;
-    background-color: #8899DD;
-    border-radius: 45px;
-}
-
-.add_button_cross_help1 {
-    position: absolute;
-    left: 38%;
-    width: 24%;
-    height: 74%;
-    top: 13%;
-    background-color: lawngreen;
-    border-radius: 15px;
-}
-
-.add_button_cross_help2 {
-    position: absolute;
-    left: 13%;
-    width: 74%;
-    height: 24%;
-    top: 38%;
-    border-radius: 15px;
-    background-color: lawngreen;
-}
-
-.empty_box {
-    position: absolute;
-    height: 130px;
 }

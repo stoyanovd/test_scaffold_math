@@ -1,0 +1,37 @@
+.right_bottom {
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+
+.add_button_cross {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #8899DD;
+  border-radius: 45px;
+  box-shadow: 3px 3px 9px 9px darkslategrey;
+}
+
+.add_button_cross_help {
+  position: absolute;
+  background-color: lawngreen;
+  border-radius: 15px;
+  box-shadow: 1px 1px 9px 3px lawngreen;
+}
+
+.add_button_cross_help1 {
+  @extend .add_button_cross_help;
+  left: 38%;
+  width: 24%;
+  height: 74%;
+  top: 13%;
+}
+
+.add_button_cross_help2 {
+  @extend .add_button_cross_help;
+  left: 13%;
+  width: 74%;
+  height: 24%;
+  top: 38%;
+}

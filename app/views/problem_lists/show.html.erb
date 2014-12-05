@@ -1,12 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-    <strong>Title:</strong>
-    <%= @problem_list.title %>
-</p>
+<header class="problem_list_header">
 
-<p>
-    <strong>Description:</strong>
+    <nav class="right_float top_centering_inner_div">
+        <%= link_to('', problem_lists: @problem_list, method: :delete, data: {confirm: 'Are you sure?'}, class: "delete_button_cross") do %>
+            <div class="delete_button_cross_help1"></div>
+            <div class="delete_button_cross_help2"></div>
+        <% end %>
+    </nav>
+
+
+    <h1 class="">
+            <%= @problem_list.title %>
+    </h1>
+
+</header>
+
+<p align="center">
     <%= @problem_list.description %>
 </p>
 
@@ -24,5 +34,6 @@
 <br>
 <br>
 <%= link_to 'Edit', edit_problem_list_path(@problem_list) %> |
-<%= link_to 'Destroy', @problem_list, method: :delete, data: {confirm: 'Are you sure?'} %> |
+
+
 <%= link_to 'Back', problem_lists_path %>

@@ -1,4 +1,5 @@
 class ProblemListsController < ApplicationController
+  helper ProblemListsHelper
   before_action :set_problem_list, only: [:show, :edit, :update, :destroy]
 
   # GET /problem_lists

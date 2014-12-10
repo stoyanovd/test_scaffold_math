@@ -2,13 +2,13 @@ require 'test_helper'
 
 class StudentsControllerTest < ActionController::TestCase
   setup do
-    @student = students(:one)
+    @user = students(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:students)
+    assert_not_nil assigns(:users)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class StudentsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create student" do
-    assert_difference('Student.count') do
-      post :create, student: { name: @student.name }
+  test "should create user" do
+    assert_difference('User.count') do
+      post :create, user: {name: @user.name}
     end
 
-    assert_redirected_to student_path(assigns(:student))
+    assert_redirected_to student_path(assigns(:user))
   end
 
-  test "should show student" do
-    get :show, id: @student
+  test "should show user" do
+    get :show, id: @user
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @student
+    get :edit, id: @user
     assert_response :success
   end
 
-  test "should update student" do
-    patch :update, id: @student, student: { name: @student.name }
-    assert_redirected_to student_path(assigns(:student))
+  test "should update user" do
+    patch :update, id: @user, user: {name: @user.name}
+    assert_redirected_to student_path(assigns(:user))
   end
 
-  test "should destroy student" do
-    assert_difference('Student.count', -1) do
-      delete :destroy, id: @student
+  test "should destroy user" do
+    assert_difference('User.count', -1) do
+      delete :destroy, id: @user
     end
 
     assert_redirected_to students_path

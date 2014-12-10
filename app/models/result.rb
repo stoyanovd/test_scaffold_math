@@ -3,7 +3,7 @@ class Result < ActiveRecord::Base
             length: {minimum: 1}
 
 
-  belongs_to :student
+  belongs_to :user
 
   belongs_to :problem
 
@@ -20,7 +20,7 @@ class Result < ActiveRecord::Base
 
   private
   def must_exists
-    errors.add(:student_id, 'must exists') unless Student.exists?(id: self.student)
+    errors.add(:user_id, 'must exists') unless User.exists?(id: self.user)
     errors.add(:problem_id, 'must exists') unless Problem.exists?(id: self.problem)
   end
 end

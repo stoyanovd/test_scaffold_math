@@ -10,3 +10,18 @@
   align-content: center;
   justify-content: center;
 }
+
+.centering_image {
+  justify-content: center;
+  max-width: 100px;
+  max-height: 100px;
+  position: relative;
+  display: table-cell;
+}
+
+.system_right_console {
+  @extend .only_admin_panel;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+}

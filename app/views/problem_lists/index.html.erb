@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <% index_i = 0 %>
 <% @problem_lists.each do |problem_list| %>
     <% case (index_i % 3) %>
@@ -11,7 +13,7 @@
 
     <table class="table_problem_list_short_view <%= this_table_align %>" style="top: <%= (index_i / 3) * 230 %>px">
         <tr>
-            <td colspan="7" align="center" class="problem_list_name">
+            <td colspan="7" align="center" class="problem_list_name bold_text">
                 <%= link_to problem_list.title, problem_list, class: "td_link" %>
             </td>
         </tr>
@@ -24,13 +26,13 @@
                 </td>
             <% end %>
         </tr>
-        <% Student.all.each do |student| %>
+        <% User.all.each do |user| %>
             <tr>
-                <td class="student_name">
-                    <%= link_to student.name, student_path(student), class: "td_link" %>
+                <td class="user_name">
+                    <%= link_to user.name, user_path(user), class: "td_link" %>
                 </td>
                 <% problem_list.problems.each do |problem| %>
-                    <% cur = problem.results.select { |result| result.student_id == student.id } %>
+                    <% cur = problem.results.select { |result| result.user_id == user.id } %>
                     <% if cur.count > 0 %>
                         <% result = cur.first %>
                         <% td_color = result.get_color %>
@@ -39,7 +41,7 @@
                         </td>
                     <% else %>
                         <td class="result_status" style="background-color: grey">
-                            <%= link_to "&nbsp;".html_safe, new_result_path(problem_id: problem.id, student_id: student.id), class: "td_link" %>
+                            <%= link_to "&nbsp;".html_safe, new_result_path(problem_id: problem.id, user_id: user.id), class: "td_link" %>
                         </td>
                     <% end %>
                 <% end %>

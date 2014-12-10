@@ -14,7 +14,7 @@
     <tbody>
     <% @result_colors.each do |result_color| %>
         <tr>
-            <td><%= result_color.word %></td>
+            <td class="result_status" style="background-color: <%= "#%02x%02x%02x" % [result_color.red, result_color.green, result_color.blue] %>"><%= result_color.word %></td>
             <td><%= result_color.red %></td>
             <td><%= result_color.green %></td>
             <td><%= result_color.blue %></td>

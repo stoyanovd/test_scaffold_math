@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201162049) do
+ActiveRecord::Schema.define(version: 20141209024308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20141201162049) do
     t.integer  "problem_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "figure_file_name"
+    t.string "figure_content_type"
+    t.integer "figure_file_size"
+    t.datetime "figure_updated_at"
   end
 
   create_table "result_colors", force: true do |t|
@@ -49,11 +53,11 @@ ActiveRecord::Schema.define(version: 20141201162049) do
     t.datetime "updated_at"
   end
 
-  create_table "students", force: true do |t|
+  create_table "users", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password"
+    t.string "password_digest"
   end
 
 end

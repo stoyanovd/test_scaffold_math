@@ -8,11 +8,21 @@ Rails.application.routes.draw do
 
   resources :problems
 
-  resources :problem_lists
+  resources :problem_lists do
+    collection do
+      get 'logout', action: :logout
+    end
+  end
 
-  resources :students
+  resources :users do
+    collection do
+      get 'sign_in', action: :show_sign_in
+      post 'try_enter', action: :try_enter
+    end
+  end
 
   mathjax 'mathjax'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

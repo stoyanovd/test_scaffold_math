@@ -1,17 +1,11 @@
-<p id="notice"><%= notice %></p>
+<p id="notice">
+    <%= notice %>
+</p>
 
 <header class="problem_list_header">
 
-    <nav class="right_float top_centering_inner_div">
-        <%= link_to('', problem_lists: @problem_list, method: :delete, data: {confirm: 'Are you sure?'}, class: "delete_button_cross") do %>
-            <div class="delete_button_cross_help1"></div>
-            <div class="delete_button_cross_help2"></div>
-        <% end %>
-    </nav>
-
-
-    <h1 class="">
-            <%= @problem_list.title %>
+    <h1>
+        <%= @problem_list.title %>
     </h1>
 
 </header>
@@ -20,20 +14,34 @@
     <%= @problem_list.description %>
 </p>
 
-<p>
-    <strong>id:</strong>
-    <%= @problem_list.id %>
-</p>
-
-<p>
+<div>
     <% @problem_list.problems.each do |problem| %>
-        <%= link_to problem.number, problem_path(problem) %>
+        <div>
+            <span class="plain_bold_text">
+                <%= problem.number %>
+            </span>
+            <span>
+                <%= problem.body %>
+            </span>
+            <% if problem.figure != nil %>
+                <div class="centering_image">
+                    <%= image_tag problem.figure.url %>
+                </div>
+            <% end %>
+        </div>
+        <br>
     <% end %>
-</p>
-<%= link_to 'New Problem', new_problem_path(problem_list_id: @problem_list.id) %>
-<br>
-<br>
-<%= link_to 'Edit', edit_problem_list_path(@problem_list) %> |
+</div>
 
+<div class="system_right_console">
+    <%= link_to 'New Problem', new_problem_path(problem_list_id: @problem_list.id) %>
+    <br>
+    <%= link_to 'Edit', edit_problem_list_path(@problem_list) %>
+    <br>
+    <%= link_to 'Destroy', @problem_list, method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
+
+<br>
+<br>
 
 <%= link_to 'Back', problem_lists_path %>

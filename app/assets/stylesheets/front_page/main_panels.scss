@@ -8,8 +8,7 @@
 }
 
 .main_body {
-  column-width: 270px;
-    min-height: 100%;
+  min-height: 100%;
   display: table;
 }
 
@@ -17,6 +16,7 @@
   float: left;
   margin: 0;
   font-family: "Lucida Grande", Iverdana, arial, helvetica, sans-serif;
+  font-weight: bold;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
@@ -30,4 +30,20 @@
   right: 20px;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+.main_header_links {
+  color: blue;
+  :link {
+    text-decoration: none;
+  }
+  :visited {
+    text-decoration: none;
+  }
+  :hover {
+    text-decoration: underline;
+  }
+  :active {
+    text-decoration: underline;
+  }
 }

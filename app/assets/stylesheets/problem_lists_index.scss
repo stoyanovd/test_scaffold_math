@@ -1,0 +1,57 @@
+
+.table_problem_list_short_view {
+  margin: 20px;
+  position: absolute;
+  display: table-cell;
+  box-shadow: 2px 2px 12px 7px darkslategrey;
+
+  a:link {
+    color: #000000;
+  }
+
+  a:visited {
+    color: #000000;
+  }
+
+  a:hover {
+    color: #000000;
+    background-color: #555555;
+    opacity: 0.7;
+    border-radius: 13px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .td_link {
+    display: block;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .student_name {
+    background-color: gold;
+  }
+
+  .problem_number {
+    background-color: #8899DD;
+    font-weight: 600;
+  }
+
+  .problem_list_name {
+    background-color: #8866DD;
+  }
+
+}
+
+.left_problem_list_align {
+  left: 0;
+}
+
+.middle_problem_list_align {
+  left: 33%;
+}
+
+.right_problem_list_align {
+  left: 67%;
+}

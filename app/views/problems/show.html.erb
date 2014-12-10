@@ -26,5 +26,8 @@
 <%= link_to 'New Result', new_result_path(problem_id: @problem.id) %>
 <br>
 <br>
+<%= link_to 'Destroy', @problem, method: :delete, data: {confirm: 'Are you sure?'} %>
+<br>
+<br>
 <%= link_to 'Edit', edit_problem_path(@problem) %> |
 <%= link_to 'Back', problems_path %>

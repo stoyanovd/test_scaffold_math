@@ -23,7 +23,7 @@
             <span>
                 <%= problem.body %>
             </span>
-            <% if problem.figure != nil %>
+            <% if problem.figure.file? %>
                 <div class="centering_image">
                     <%= image_tag problem.figure.url %>
                 </div>

@@ -1,10 +1,13 @@
 .main_header {
   height: 20px;
   border-bottom: groove 7px;
+  border-radius: 10px;
 }
 
 .main_footer {
   height: 60px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .main_body {
@@ -27,6 +30,8 @@
   font-size: 14px;
   text-decoration: none;
   position: absolute;
+  display: flex;
+  align-content: center;
   right: 20px;
   top: 50%;
   transform: translate(0, -50%);
@@ -34,6 +39,9 @@
 
 .main_header_links {
   color: blue;
+  margin: auto;
+  padding-left: 3px;
+  padding-right: 3px;
   :link {
     text-decoration: none;
   }
@@ -46,4 +54,19 @@
   :active {
     text-decoration: underline;
   }
+}
+
+.greetings_header {
+  font-weight: bold;
+  margin: auto;
+  padding-right: 10px;
+}
+
+.container {
+  width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  background-color: #F7F7F7;
+  position: relative;
 }

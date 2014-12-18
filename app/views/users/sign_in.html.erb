@@ -1,25 +1,14 @@
-<p id="notice">
-    <%= notice %>
-</p>
-
-<p id="alert">
-    <%= alert %>
-</p>
-<% logger.debug ("WWWW  in html" + @user.to_s + "  " + (@user != nil).to_s) %>
-
 <%= form_for :user, url: try_enter_users_path do |f| %>
     <div class="field">
         <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :autofocus => true %>
     </div>
     <div class="field">
         <%= f.label :password %><br>
         <%= f.password_field :password %>
     </div>
+    <br>
     <div class="actions">
-        <%= f.submit %>
+        <%= f.submit 'Login' %>
     </div>
 <% end %>
-<br>
-
-<%= link_to 'Back', problem_lists_path %>

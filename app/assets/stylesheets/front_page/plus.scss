@@ -1,3 +1,8 @@
+.right_float {
+  position: relative;
+  right: 50px;
+}
+
 .right_bottom {
   position: absolute;
   right: 30px;
@@ -5,12 +10,29 @@
 }
 
 .add_button_cross {
-  position: absolute;
+  float: right;
   width: 100px;
   height: 100px;
   background-color: #8899DD;
   border-radius: 45px;
   box-shadow: 3px 3px 9px 9px darkslategrey;
+}
+
+a:link.add_button_cross {
+  color: #000000;
+}
+
+a:visited.add_button_cross {
+  color: #000000;
+}
+
+a:hover.add_button_cross {
+  color: #000000;
+  background-color: #555555;
+  opacity: 0.7;
+  border-radius: 13px;
+  margin: 0;
+  padding: 0;
 }
 
 .add_button_cross_help {

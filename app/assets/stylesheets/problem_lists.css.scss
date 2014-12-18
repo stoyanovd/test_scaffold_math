@@ -20,7 +20,6 @@
 }
 
 .system_right_console {
-  @extend .only_admin_panel;
   position: absolute;
   right: 20px;
   top: 50px;

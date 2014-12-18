@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
     <strong>Number:</strong>
     <%= @problem.number %>
@@ -31,3 +29,15 @@
 <br>
 <%= link_to 'Edit', edit_problem_path(@problem) %> |
 <%= link_to 'Back', problems_path %>
+<br>
+<br>
+
+<div>
+    <% if @problem.figure.file? %>
+        <div class="centering_image">
+            <%= image_tag @problem.figure.url %>
+        </div>
+    <% else %>
+        <strong>Problem hasn't got a picture.</strong>
+    <% end %>
+</div>

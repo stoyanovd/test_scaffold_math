@@ -1,6 +1,7 @@
 class ProblemList < ActiveRecord::Base
   validates :title, presence: true,
-            length: {minimum: 1}
+            length: {minimum: 1},
+            uniqueness: true
 
   #description
 

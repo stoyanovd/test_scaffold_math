@@ -1,7 +1,7 @@
 class ResultColorsController < ApplicationController
 
-  include UsersHelper
-  before_action :check_user
+  before_action :check_admin
+
   before_action :set_result_color, only: [:show, :edit, :update, :destroy]
 
   def index

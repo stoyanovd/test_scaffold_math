@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216220218) do
+ActiveRecord::Schema.define(version: 20141217224205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: true do |t|
+    t.text "body"
+    t.integer "problem_id"
+    t.integer "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "figure_file_name"
+    t.string "figure_content_type"
+    t.integer "figure_file_size"
+    t.datetime "figure_updated_at"
+  end
 
   create_table "problem_lists", force: true do |t|
     t.string   "title"

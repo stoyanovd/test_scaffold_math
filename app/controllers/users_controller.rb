@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   include UsersHelper
 
-  before_action :check_user, except: [:show, :index, :new, :create, :try_enter, :show_sign_in]
+  before_action :check_admin, except: [:try_enter, :show_sign_in, :new, :create]
+
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index

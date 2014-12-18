@@ -1,7 +1,7 @@
 class ProblemsController < ApplicationController
-  include UsersHelper
 
-  before_action :check_user
+  before_action :check_admin
+
   before_action :set_problem, only: [:show, :edit, :update, :destroy]
 
 

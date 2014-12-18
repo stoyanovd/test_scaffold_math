@@ -14,32 +14,13 @@
  *= require_self
  */
 
-html, body {
-    height: 100%;
-
-}
-
 table, th, td {
     border: 4px ridge seagreen;
     table-layout: auto;
 }
 
-tr, td {
-    width: 30px;
-    height: 20px;
-}
-
 .blank_tr {
     height: 15px;
-}
-
-.container {
-    width: 800px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 20px;
-    background-color: #F7F7F7;
-    position: relative;
 }
 
 .main_background {
@@ -50,6 +31,12 @@ tr, td {
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 18px;
+
+    background: url("wall.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 td {
@@ -63,8 +50,4 @@ td {
     font-weight: bold;
     display: inline-block;
     min-width: 40px;
-}
-
-#alert {
-    color: red;
 }

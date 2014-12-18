@@ -1,10 +1,12 @@
 class Problem < ActiveRecord::Base
   validates :number, numericality: true,
-            presence: true
+            presence: true,
+            uniqueness: true
 
 
   belongs_to :problem_list
   has_many :results
+  has_many :answers
 
 
   validate :must_exists

@@ -1,8 +1,3 @@
-.right_float {
-  position: absolute;
-  right: 50px;
-}
-
 .top_centering_inner_div {
   position: absolute;
   top: 15%;
@@ -10,38 +5,41 @@
 }
 
 .delete_button_cross {
-  position: absolute;
-  width: 34px;
-  height: 34px;
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
   background-color: #8899DD;
   border-radius: 25px;
-  box-shadow: 2px 2px 6px 4px darkslategrey;
+  box-shadow: 1px 1px 5px 4px darkslategrey;
+  margin-left: 10px;
+  transform: rotate(45deg);
 }
 
-$long_part: 70%;
-$short_part: 20%;
+$long_part: 72%;
+$short_part: 18%;
 
 .delete_button_cross_help {
+  display: inline-block;
   position: absolute;
   background-color: darkred;
   border-radius: 5px;
-  box-shadow: 1px 1px 6px 1px darkred;
+  box-shadow: 0 0 6px 1px darkred;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .delete_button_cross_help1 {
   @extend .delete_button_cross_help;
-  left: (100% - $short_part) / 2;
-  width: $short_part;
-  height: $long_part;
-  top: (100% - $long_part) / 2;
-  transform: rotate(45deg);
+  height: $short_part;
+  width: $long_part;
+
 }
 
 .delete_button_cross_help2 {
   @extend .delete_button_cross_help;
-  left: (100% - $long_part) / 2;
-  width: $long_part;
-  height: $short_part;
-  top: (100% - $short_part) / 2;
-  transform: rotate(45deg);
+  height: $long_part;
+  width: $short_part;
 }

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :answers
+
   resources :result_colors
 
   root to: 'problem_lists#index'

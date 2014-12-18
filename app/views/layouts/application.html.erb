@@ -9,30 +9,48 @@
 
 <body class="main_background">
 
-<header class="main_header container">
+<header class="container main_header ">
     <div class="main_title">
         <%= link_to 'Problem Lists', problem_lists_path %>
     </div>
+
     <nav class="main_nav_atop_panel">
-        <% if session.has_key?(:current_user_id) && session[:current_user_id] %>
-            Hello,
-            <%= UsersController.get_cur_user(session[:current_user_id]).name %>
+        <% if loggined %>
+            <span class="greetings_header">
+                Hello,
+                <%= cur_user_name %>
+            </span>
+            <% if adminned %>
+                <%= link_to 'Users', users_path, class: "main_header_links" %>
+                <%= link_to 'Colors', result_colors_path, class: "main_header_links" %>
+                <%= link_to 'Problems', problems_path, class: "main_header_links" %>
+                <%= link_to 'Answers', answers_path, class: "main_header_links" %>
+            <% end %>
+            <%= link_to(logout_problem_lists_path, class: "main_header_links") do %>
+                <div class="delete_button_cross">
+                    <div class="delete_button_cross_help1"></div>
+                    <div class="delete_button_cross_help2"></div>
+                </div>
+            <% end %>
+        <% else %>
+            <%= link_to 'Login', sign_in_users_path, class: "main_header_links" %>
+            <%= link_to 'Sign Up', new_user_path, class: "main_header_links" %>
         <% end %>
-        <%= link_to 'Sign In', sign_in_users_path, class: "main_header_links" %>
-        <%= link_to 'Sign Up', new_user_path, class: "main_header_links" %>
-        <%= link_to 'Users', users_path, class: "main_header_links" %>
-        <%= link_to 'Colors', result_colors_path, class: "main_header_links" %>
-        <%= link_to 'Logout', logout_problem_lists_path, class: "main_header_links" %>
     </nav>
 </header>
 
-<div class="main_body container">
+<div class="notice_and_alert_line ">
+    <div id="notice"><%= notice %></div>
+    <div id="alert"><%= alert %></div>
+</div>
+
+<div class=" container main_body ">
 
     <%= yield %>
 
 </div>
 
-<footer class="main_footer container">
+<footer class="container main_footer ">
     <div align="center">
         <strong>
             <%= link_to 'Problem Lists', problem_lists_path %>

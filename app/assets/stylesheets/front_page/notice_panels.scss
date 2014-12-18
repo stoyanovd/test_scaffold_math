@@ -1,0 +1,23 @@
+@import "main_panels";
+
+.notice_and_alert_line {
+
+  @extend .container;
+  display: flex;
+  position: relative;
+  min-height: 25px;
+  padding-bottom: 0;
+  padding-top: 10px;
+  align-content: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#notice {
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+#alert {
+  color: red;
+}

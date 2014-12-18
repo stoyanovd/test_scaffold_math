@@ -1,6 +1,6 @@
 class ProblemListsController < ApplicationController
-  include UsersHelper
   before_action :check_user, except: [:show, :index]
+  before_action :check_admin, except: [:show, :index, :logout]
   before_action :set_problem_list, only: [:show, :edit, :update, :destroy]
 
   def index

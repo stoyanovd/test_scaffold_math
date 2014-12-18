@@ -42,18 +42,22 @@
   margin: auto;
   padding-left: 3px;
   padding-right: 3px;
-  :link {
-    text-decoration: none;
-  }
-  :visited {
-    text-decoration: none;
-  }
-  :hover {
-    text-decoration: underline;
-  }
-  :active {
-    text-decoration: underline;
-  }
+}
+
+:link.main_header_links {
+  text-decoration: none;
+}
+
+:visited.main_header_links {
+  text-decoration: none;
+}
+
+:hover.main_header_links {
+  text-decoration: underline;
+}
+
+:active.main_header_links {
+  text-decoration: underline;
 }
 
 .greetings_header {

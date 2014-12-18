@@ -43,3 +43,33 @@ $short_part: 18%;
   height: $long_part;
   width: $short_part;
 }
+
+:link.delete_button_cross {
+  color: #000000;
+}
+
+:visited.delete_button_cross {
+  color: #000000;
+}
+
+:hover.delete_button_cross {
+  color: #000000;
+  background-color: #555555;
+  opacity: 0.7;
+  border-radius: 13px;
+}
+
+:link.main_title_image {
+  color: #000000;
+}
+
+:visited.main_title_image {
+  color: #000000;
+}
+
+:hover.main_title_image {
+  color: #000000;
+  background-color: #555555;
+  opacity: 0.7;
+  border-radius: 13px;
+}

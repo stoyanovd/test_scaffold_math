@@ -10,9 +10,9 @@
 <body class="main_background">
 
 <header class="container main_header ">
-    <div class="main_title">
-        <%= link_to 'Problem Lists', problem_lists_path %>
-    </div>
+    <a href="<%= problem_lists_path %>" class="main_title">
+        <%= image_tag "title.png", class: "main_title_image" %>
+    </a>
 
     <nav class="main_nav_atop_panel">
         <% if loggined %>
@@ -54,7 +54,7 @@
 <footer class="container main_footer ">
     <div align="center">
         <strong>
-            <%= link_to 'Problem Lists', problem_lists_path %>
+            <%= link_to 'Problem Lists', problem_lists_path, class: "main_header_links" %>
         </strong>
     </div>
     \[\int_a^b f(x) dx=F(b)-F(a)\]

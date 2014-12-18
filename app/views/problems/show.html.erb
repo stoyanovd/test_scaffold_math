@@ -15,9 +15,9 @@
 
 <p>
     <strong>Problem list:</strong>
-    <%= @problem.problem_list_id %>
+    <%= link_to @problem.problem_list_id, problem_list_path(@problem.problem_list) %>
     <strong> &nbsp;&nbsp;&nbsp;(
-        <%= @problem.problem_list.title %>  )
+        <%= link_to @problem.problem_list.title, problem_list_path(@problem.problem_list) %> )
     </strong>
 </p>
 

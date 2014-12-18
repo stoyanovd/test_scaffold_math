@@ -21,6 +21,7 @@
                 <%= cur_user_name %>
             </span>
             <% if adminned %>
+                <%= link_to 'New List', new_problem_list_path, class: "main_header_links" %>
                 <%= link_to 'Users', users_path, class: "main_header_links" %>
                 <%= link_to 'Colors', result_colors_path, class: "main_header_links" %>
                 <%= link_to 'Problems', problems_path, class: "main_header_links" %>

@@ -29,7 +29,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       if @result.save
-        format.html { redirect_to @result, notice: 'Result was successfully created.' }
+        format.html { redirect_to problem_lists_path, notice: 'Result was successfully created.' }
       else
         format.html { render :new }
       end
@@ -39,7 +39,7 @@ class ResultsController < ApplicationController
   def update
     respond_to do |format|
       if @result.update(result_params)
-        format.html { redirect_to @result, notice: 'Result was successfully updated.' }
+        format.html { redirect_to problem_lists_path, notice: 'Result was successfully updated.' }
       else
         format.html { render :edit }
       end

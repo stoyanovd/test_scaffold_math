@@ -28,25 +28,27 @@
             <% end %>
         </tr>
         <% User.all.each do |user| %>
-            <tr>
-                <td align="center" class="user_name">
-                    <%= link_to_if adminned, ("&nbsp;".html_safe + user.name + "&nbsp;".html_safe), user_path(user), class: "td_link" %>
-                </td>
-                <% problem_list.problems.each do |problem| %>
-                    <% cur = problem.results.select { |result| result.user_id == user.id } %>
-                    <% if cur.count > 0 %>
-                        <% result = cur.first %>
-                        <% td_color = result.get_color %>
-                        <td align="center" class="result_status" style="background-color: <%= "#%02x%02x%02x" % [td_color.red, td_color.green, td_color.blue] %>">
-                            <%= link_to_if adminned, result.status, result_path(result), class: "td_link" %>
-                        </td>
-                    <% else %>
-                        <td align="center" class="result_status" style="background-color: grey">
-                            <%= link_to_if adminned, "&nbsp;".html_safe, new_result_path(problem_id: problem.id, user_id: user.id), class: "td_link" %>
-                        </td>
+            <% unless user.name == "dima" %>
+                <tr>
+                    <td align="center" class="user_name">
+                        <%= link_to_if adminned, ("&nbsp;".html_safe + user.name + "&nbsp;".html_safe), user_path(user), class: "td_link" %>
+                    </td>
+                    <% problem_list.problems.each do |problem| %>
+                        <% cur = problem.results.select { |result| result.user_id == user.id } %>
+                        <% if cur.count > 0 %>
+                            <% result = cur.first %>
+                            <% td_color = result.get_color %>
+                            <td align="center" class="result_status" style="background-color: <%= "#%02x%02x%02x" % [td_color.red, td_color.green, td_color.blue] %>">
+                                <%= link_to_if adminned, result.status, result_path(result), class: "td_link" %>
+                            </td>
+                        <% else %>
+                            <td align="center" class="result_status" style="background-color: grey">
+                                <%= link_to_if adminned, "&nbsp;".html_safe, new_result_path(problem_id: problem.id, user_id: user.id), class: "td_link" %>
+                            </td>
+                        <% end %>
                     <% end %>
-                <% end %>
-            </tr>
+                </tr>
+            <% end %>
         <% end %>
         <tr class="blank_tr"></tr>
 

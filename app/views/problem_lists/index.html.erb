@@ -1,5 +1,5 @@
 <% index_i = 0 %>
-<% @problem_lists.each do |problem_list| %>
+<% @problem_lists.reverse_each do |problem_list| %>
     <% case (index_i % 3) %>
 <% when 0 %>
         <% this_table_align = "left_problem_list_align" %>
@@ -21,7 +21,7 @@
         </tr>
         <tr>
             <td></td>
-            <% problem_list.problems.reverse_each do |problem| %>
+            <% problem_list.problems.each do |problem| %>
                 <td align="center" class="problem_number">
                     <%= link_to_if adminned, ("&nbsp;".html_safe + problem.number.to_s + "&nbsp;".html_safe), problem_path(problem), class: "td_link" %>
                 </td>
@@ -33,7 +33,7 @@
                     <td align="center" class="user_name">
                         <%= link_to_if adminned, ("&nbsp;".html_safe + user.name + "&nbsp;".html_safe), user_path(user), class: "td_link" %>
                     </td>
-                    <% problem_list.problems.reverse_each do |problem| %>
+                    <% problem_list.problems.each do |problem| %>
                         <% cur = problem.results.select { |result| result.user_id == user.id } %>
                         <% if cur.count > 0 %>
                             <% result = cur.first %>

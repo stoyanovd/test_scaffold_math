@@ -18,7 +18,8 @@
     <%= link_to @problem.problem_list_id, problem_list_path(@problem.problem_list) %>
     <strong> &nbsp;&nbsp;&nbsp;(
         <%= link_to @problem.problem_list.title, problem_list_path(@problem.problem_list) %> )
-    </strong>
+    </strong> &nbsp;&nbsp;&nbsp;
+    <%= link_to "Add problem here", new_problem_path(problem_list_id: @problem.problem_list) %>
 </p>
 
 <%= link_to 'New Result', new_result_path(problem_id: @problem.id) %>

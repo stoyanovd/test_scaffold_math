@@ -23,7 +23,7 @@ class AnswersController < ApplicationController
 
     respond_to do |format|
       if @answer.save
-        NewAnswerMailer.get_new_answer(@user).deliver_later
+        #NewAnswerMailer.get_new_answer(@user).deliver_later
         format.html { redirect_to @answer, notice: 'Answer was successfully created.' }
       else
         format.html { render :new }

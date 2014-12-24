@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   mathjax 'mathjax'
 
+  match '*path', via: :all, to: 'pages#error_404'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

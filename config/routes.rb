@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
   mathjax 'mathjax'
 
+  match '/places' => 'places#show', via: [:get, :post]
+  match '/update_places_now' => 'places#update_now', via: [:get, :post]
+
   match '*path', via: :all, to: 'pages#error_404'
 
 

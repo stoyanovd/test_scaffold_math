@@ -1,0 +1,3 @@
+[submodule "places"]
+	path = places
+	url = https://bitbucket.org/stoyanovd/places

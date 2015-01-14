@@ -36,30 +36,30 @@
 
 @-webkit-keyframes myfirst {
   0% {
-    left: 0;
+    left: 10px;
     transform: rotate(0deg);
   }
   50% {
-    left: 600px;
+    left: 705px;
     transform: rotate(550deg);
   }
   100% {
-    left: 0;
+    left: 10px;
     transform: rotate(0deg);
   }
 }
 
 @keyframes myfirst {
   0% {
-    left: 0;
+    left: 10px;
     transform: rotate(0deg);
   }
   50% {
-    left: 600px;
+    left: 705px;
     transform: rotate(550deg);
   }
   100% {
-    left: 0;
+    left: 10px;
     transform: rotate(0deg);
   }
 }

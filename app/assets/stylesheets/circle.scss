@@ -16,11 +16,11 @@
   border-right-color: yellow;
 
   -webkit-animation-name: myfirst;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-delay: 1s;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
   -webkit-animation-play-state: running;
-
+  -webkit-animation-iteration-count: infinite;
 
   :hover {
     background-color: #000000;
@@ -28,12 +28,16 @@
 }
 
 @-webkit-keyframes myfirst {
-  from {
+  0% {
     left: 0;
     transform: rotate(0deg);
   }
-  to {
-    left: 400px;
-    transform: rotate(360deg);
+  50% {
+    left: 600px;
+    transform: rotate(550deg);
+  }
+  100% {
+    left: 0;
+    transform: rotate(0deg);
   }
 }

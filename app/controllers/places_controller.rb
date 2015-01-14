@@ -1,8 +1,8 @@
 class PlacesController < ApplicationController
 
   def update_now
-    Kernel.system "cd #{Rails.root} && git submodule update"
-    redirect_to problem_lists_path
+    Kernel.system "cd #{Rails.root} && git submodule update --remote"
+    show
   end
 
   def show

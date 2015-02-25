@@ -4,21 +4,33 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def loggined
-    session.has_key?(:current_user_id) && session[:current_user_id]
+    if User.count == 0
+      true
+    else
+      session.has_key?(:current_user_id) && session[:current_user_id]
+    end
   end
 
   def cur_user_name
     unless loggined
       return nil
     end
-    User.find(session[:current_user_id]).name
+    if User.count == 0
+      'new_user'
+    else
+      User.find(session[:current_user_id]).name
+    end
   end
 
   def cur_user_id
     unless loggined
       return nil
     end
-    session[:current_user_id]
+    if User.count == 0
+      0
+    else
+      session[:current_user_id]
+    end
   end
 
   def adminned
